@@ -1,0 +1,31 @@
+<apex:page standardStylesheets="false" showHeader="false" sidebar="false">
+    <apex:includeScript value="{!$Resource.socketio0916}"/>
+    
+    <div>
+        <h1 id="scans">Waiting for a scan <span class="blinking-cursor">...</span></h1>
+    </div>
+    
+    <script type="text/javascript" charset="utf-8">
+    	window.parent.postMessage({"type": "ready"}, "*");
+        console.log('Attempting connection');
+        var socket = io.connect('https://cryptic-tor-2725.herokuapp.com');      
+        console.log(socket);    
+    
+        socket.on('connect', function() {
+            socket.emit('first connect', {data: 'Connected via Salesforce'});
+            console.log('Connected');
+            window.parent.postMessage({"type": "response", "response": "Connected!"}, "*");
+        });
+    
+    
+   		socket.on('scan', function(response){
+        	window.parent.postMessage({"type": "response", "response": response}, "*");
+        });
+
+        socket.on('pong', function(response) {
+            console.log(response);            
+        });        	
+    
+    </script>
+
+</apex:page>

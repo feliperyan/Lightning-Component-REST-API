@@ -1,0 +1,14 @@
+<aura:component implements="flexipage:availableForAllPageTypes">
+
+    <ltng:require styles="/resource/SLDS0120/assets/styles/salesforce-lightning-design-system-vf.css"/>
+    <aura:handler event="c:WebSocketEvent" action="{!c.handleWebSocketEvent}" />
+    <aura:attribute name="latestMessage" type="String" />
+    
+    <div class="slds" style="border: 5px solid blue;">
+        <h1>Latest Message:</h1>
+		<div id="results">
+            <h2>{!v.latestMessage}</h2>
+        </div>
+    </div>
+    
+</aura:component>
