@@ -1,0 +1,18 @@
+.THIS {
+    text-align: center;
+}
+
+.THIS > p {
+    font-size: 14px;
+    color: #CCCCCC;
+    margin: 4px 0;
+}
+
+.THIS img {
+    min-height: 100px;
+    max-height: 200px;
+    max-width: 300px;
+	width: auto;
+    height: auto;
+    border-radius: 4px;
+}
