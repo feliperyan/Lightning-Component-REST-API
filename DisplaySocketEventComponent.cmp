@@ -5,10 +5,9 @@
     <aura:attribute name="latestMessage" type="String" />
     
     <div class="slds" style="border: 5px solid blue;">
-        <h1>Latest Message:</h1>
-		<div id="results">
-            <h2>{!v.latestMessage}</h2>
-        </div>
+        
+        <c:ProfilePictureComponent aura:id="profileComponent"/>
+        
     </div>
     
 </aura:component>
