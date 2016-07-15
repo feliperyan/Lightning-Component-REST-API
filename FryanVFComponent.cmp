@@ -1,11 +1,12 @@
 <aura:component implements="flexipage:availableForAllPageTypes">    
     <iframe aura:id="vfIframe" style='display:none;' src="/apex/FryanVFWebSocket"></iframe>	
+    <aura:attribute name="status" type="String" default="Awaiting connection..."/>
     
-    <div id="{!globalId + 'bucket'}" style="border: 5px solid blue;">
-	    <h2>Awaiting connection...</h2>
+    <div style="border: 5px solid blue;">
+	    <h2>{!v.status}</h2>
     </div>
 	
     <aura:handler name="init" value="{!this}" action="{!c.doInit}" />        
-    <aura:registerEvent name="name_not_important_for_app_events" type="c:WebSocketEvent" />
+    <aura:registerEvent name="yolo" type="c:WebSocketEvent" />
     
 </aura:component>
